@@ -1,0 +1,45 @@
+<ion-menu [content]="content" side="left">
+
+    <ion-content>
+        <ion-thumbnail>
+              <img src="{{this.data.apiEndpoint}}images/user.png" class="avatarImg">                             
+        </ion-thumbnail>
+        <ion-row *ngIf="this.loggedIn">
+           <ion-col col-12>
+             <p> {{this.authService.currentUserName}} </p>
+             <p> @{{ this.authService.currentUserUsername }} </p>
+          </ion-col>
+        </ion-row>
+        <ion-row *ngIf="!this.loggedIn">
+           <ion-col col-12>
+             <p> @Guest </p>
+             <p>Please Login</p>
+          </ion-col>
+        </ion-row>
+        <ion-list>
+             <button ion-item menuClose (click)="openHomePage()">
+                 <ion-icon name="home" padding-right></ion-icon>
+                Home
+            </button>
+            <button ion-item menuClose (click)="openOrderPage()">
+                <ion-icon name="restaurant" padding-right></ion-icon>
+                Orders
+            </button>
+            <button ion-item menuClose *ngIf="!this.loggedIn" (click)="openLoginPage()">
+                <ion-icon name="log-in" padding-right></ion-icon>
+                Log In/Sign Up
+            </button>
+            <button ion-item menuClose (click)="openAboutPage()">
+                <ion-icon name="information-circle" padding-right></ion-icon>
+                About
+            </button>
+            <button ion-item menuClose *ngIf="this.loggedIn" (click)="logout()">
+                <ion-icon name="log-out" padding-right></ion-icon>
+                Logout
+            </button>
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Address Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding class="container">
+  <ion-card>
+    <ion-card-header>
+      <h1> Address </h1>
+    </ion-card-header>
+  <ion-card-content>
+      <ion-row>
+         <p class="price">{{ this.addr1 }}</p>
+      </ion-row>
+      <ion-row>
+         <p class="price">{{ this.addr2 }}</p>
+      </ion-row>
+      <ion-row>
+         <p class="price">{{ this.city }}</p>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+  <div>
+    <button ion-button color="danger" (click)="changeAddress()">Change Address</button>
+  </div>
+</ion-content>
+<ion-footer height="100">
+  <ion-grid no-padding>
+    <ion-row>
+      <button ion-button full color="danger" (click)="onCartClick()">Confirm Order</button>
+    </ion-row>
+  </ion-grid>
+</ion-footer>

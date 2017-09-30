@@ -1,0 +1,57 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Sign Up</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="container" padding>
+
+  <form [formGroup]="signUp">
+
+    <ion-item>
+      <ion-label floating>Full Name</ion-label>
+      <ion-input type="text" formControlName="fullName"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Phone Number</ion-label>
+      <ion-input type="tel" formControlName="phoneNumber"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Address Line 1</ion-label>
+      <ion-input type="text" formControlName="addr1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Address Line 2 (Optional)</ion-label>
+      <ion-input type="text" formControlName="addr2"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+    <ion-label>City</ion-label>
+    <ion-select formControlName="city">
+      <ion-option value="Raipur">Raipur</ion-option>
+    </ion-select>
+  </ion-item>
+    <ion-item>
+      <ion-label floating>PostalCode</ion-label>
+      <ion-input type="number" value="492001" formControlName="postalCode"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Username</ion-label>
+      <ion-input type="text" formControlName="username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <button ion-button color="danger" type="submit" block (click)="signUpForm()" [disabled]="!signUp.valid">Sign Up</button>
+
+  </form>
+  
+</ion-content>

@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Order Detail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="container" class="app">
+  <ion-card>
+    <ion-card-content padding-vertical>
+      <ion-row no-padding>
+        <ion-col col-1>
+          <ion-icon name="ios-basket"></ion-icon>
+        </ion-col>
+        <ion-col col-9>
+          <h3>Thank you for your order</h3>
+          <p>Here are the details</p>
+        </ion-col>
+      </ion-row>
+      <ion-row *ngFor="let o of orderDetails" no-padding>
+        <ion-col col-7>
+          <h3> {{ o.quantityRequired + 'x ' + o.product.productName }} </h3>
+        </ion-col>
+        <ion-col col-5>
+          <h3> Rs. {{ o.product.productPrice * o.quantityRequired }} </h3>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-7>
+        <p>Subtotal</p>
+        </ion-col>
+        <ion-col col-5>
+          <p> Rs. {{this.total}} </p>
+        </ion-col>
+      </ion-row>
+      </ion-card-content>
+  </ion-card>
+
+</ion-content>

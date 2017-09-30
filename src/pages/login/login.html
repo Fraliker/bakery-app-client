@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content class="container" padding>
+
+  <form [formGroup]="login">
+    <ion-item>
+      <ion-label floating>Email</ion-label>
+      <ion-input type="text" formControlName="email" ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+    <button ion-button color="facebook" type="submit" block [disabled]="!login.valid" (click)="loginForm()">Login</button>
+  </form>
+
+  <p>You don't have an account ?</p>
+  <div>
+    <button ion-button color="google" (click)="goToSignUp()">Sign Up Now</button>
+  </div>
+
+</ion-content>
